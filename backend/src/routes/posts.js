@@ -33,9 +33,9 @@ router.post('/', auth, postValidation, async (req, res, next) => {
   }
 });
 
-// Get all posts
+// Get all posts OR posts by author
 router.get('/', async (req, res, next) => {
-  try {
+  try { 
     const { author } = req.query;
     const query = author ? { author } : {};
 
