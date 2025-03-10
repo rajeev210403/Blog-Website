@@ -44,50 +44,19 @@ DevBlog is a full-stack blogging platform that allows developers to share their 
 1. Clone the repository:
    ```bash
    git clone <repository-link>
-   cd simple-quiz-app
+   cd devblog
 2. Install Dependencies:
    ```bash
-   npm install
-3. Run Application:
+   npm install  # or yarn install
+3. Setup Environment Variables
+   Create a .env file in the root directory and add the following:
    ```bash
-   npm run dev
-
-## Assumptions
-1. The user has an active internet connection to fetch the questions from the API.
-2. Each question has a single correct answer.
-3. The user’s email is required before starting the quiz.
-
-## Challenges and Learnings
-
-1. **Timer Syncronization**: Initially, keeping the timer synchronized with the user's quiz session was challenging. To address this, I ensured the timer logic is isolated and triggered every second while the quiz is active.
-2. **Quiz Questions**:Managing the state for user answers, question navigation, and timer updates required careful consideration. I used React’s useState and useEffect hooks to handle all the state updates and side effects.
-3. **Timer**:Ensuring smooth animations and responsiveness, I used Tailwind.
-4. **Navigation**:
-   - Users can navigate to specific questions via a navigation panel.
-   - Question statuses are visually indicated for ease of use.
-5. **End of Quiz Report**:
-   - Displays each question, the user's answer, the correct answer, and incorrect options for comparison.
-   - Includes detailed stats such as accuracy, correct answers, attempt rate, and questions attempted.
-  
-## Technologies Used:
-
-- React Vite
-- TypeScript
-- Axios
-- TailWind CSS
-
-## How to Use:
-
-- Enter your email address to start the quiz.
-- Answer the questions or skip and revisit them using the navigation panel.
-- Keep track of the timer at the top of the page.
-- Submit the quiz or let it auto-submit when the timer ends.
-- View the detailed quiz report and analyze your performance.
-
-## Deployment:
-
-- The application is hosted on Vercel
-- **Live link**: https://quiz-app-brown-nine.vercel.app/
-  
-
-  
+   MONGODB_URI=your database link
+   JWT_SECRET=your_jwt_secret
+   PORT=5000
+4. Run the Backend Server:
+   ```bash
+   npm start  # Starts Express backend on port 5000
+5. Run Frontend:
+   ```bash
+   npm run dev  # Starts Next.js frontend on port 3000
